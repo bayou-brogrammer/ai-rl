@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 
-use crate::{Position, Renderable, TILE_SIZE, MAP_WIDTH, MAP_HEIGHT};
+use crate::{Player, Position, Renderable, MAP_HEIGHT, MAP_WIDTH, TILE_SIZE};
 
 pub struct AsciiRendererPlugin;
 
@@ -52,6 +52,6 @@ pub fn spawn_ascii_entity(
             z_index,
         ),
         position,
-        renderable,
+        renderable
     )).id()
 }

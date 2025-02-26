@@ -139,7 +139,7 @@ fn spawn_player(
     let player_pos = valid_positions[rng.random_range(0..valid_positions.len())];
     let (x, y) = player_pos;
 
-    spawn_ascii_entity(
+    let player_id = spawn_ascii_entity(
         &mut commands,
         &asset_server,
         Position { x, y },
@@ -149,6 +149,8 @@ fn spawn_player(
         },
         1.0,
     );
+
+    commands.entity(player_id).insert(Player);
 }
 
 fn player_movement(
